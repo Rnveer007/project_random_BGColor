@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+        }
+
+        #wrapper {
+            height: 100vh;
+            width: 100%;
+            background-color: black;
+            color: white;
+            display: flex;
+            justify-content: center;
+        }
+
+        .box {
+            border: 2px solid white;
+            background-color: brown;
+            padding-top: 5rem;
+            height: 300px;
+            width: 400px;
+            margin-top: 5rem;
+        }
+
+        .box button {
+            width: 100px;
+            height: 30px;
+            font-size: 18px;
+            align-items: center;
+            background-color: green;
+            color: white;
+            align-content: center;
+            margin-left: 5rem;
+
+
+        }
+
+        .box p {
+            color: #fff;
+            width: 100px;
+            height: 30px;
+            padding: 4px 10px;
+            text-align: center;
+            margin-left: 5rem;
+            margin-top: 2rem;
+
+        }
+    </style>
+</head>
+
+<body>
+    <div id="wrapper">
+        <div class="box">
+            <button>click</button>
+           <p></p>
+        </div>
+    </div>
+
+    <script>
+        let clickBtn = document.querySelector(".box button");
+        let target = document.querySelector("#wrapper");
+        let para = document.querySelector(".box p")
+        let randomcolor = {
+            backgroundColor1: "#fff",
+            backgroundColor2: "#000",
+            backgroundColor3: "#800080",
+            backgroundColor4: "#00FF00",
+            backgroundColor5: "#0000FF",
+            backgroundColor6: "#008000",
+            backgroundColor7: "#2F4F4F",
+            backgroundColor8: "##BDB76B",
+            backgroundColor9: "#FF0000",
+            backgroundColor10: "#696969",
+        }
+
+
+        clickBtn.addEventListener("click", () => {
+            let colorValue = Object.values(randomcolor);
+
+            let colors = Math.floor(Math.random() * colorValue.length);
+
+            target.style.backgroundColor = colorValue[colors];
+            para.style.display = "block"
+            para.style.border = "2px solid black"
+            para.style.backgroundColor = "black"
+            para.innerHTML = colorValue[colors];
+        })
+    </script>
+</body>
+
+</html>
